@@ -5,36 +5,34 @@
 <%@page language="java"%>
 <%
     // Declare and initialize numbers
-	int num1 = Integer.parseInt(request.getParameter("num1"));
+	int num1;
+    if(Integer.parseInt(request.getParameter("num1"));
 	int num2 = Integer.parseInt(request.getParameter("num2"));
+    int value=0;
 	
     // Capture operation passed by parameter
 	String operation = request.getParameter("r1");
 	
         // Addition operation
 		if(operation.equals("Add")){
-			int add=num1+num2;
-			out.println("Addition is: "+add);
+			value = num1+num2;
 		}
         // Subtract operation
 		else if(operation.equals("Sub")){
-			int sub=num1-num2;
-			out.println("Substraction is: "+sub);
+			value = num1-num2;
 		}
         // Multiply operation
 		else if(operation.equals("mul")){
-			int mul=num1*num2;
-			out.println("multiplication is: "+mul);
+			value = num1*num2;
 		}
         // Division operation
-		else if(operation.equals("div"))
-		{
-			int div = num1/num2;
-			if(num1>=num2)
-				out.println("division is: "+div);
-			else
-				out.println("The division cannot be performed");
+		else if(operation.equals("div")){
+			value = num1/num2;
 		}
+
+        // Redirect back to calculator UI
+        String redirectURL = "http://localhost/calculator.html?value=" + value;
+        response.sendRedirect(redirectURL);
 %>
 </body>
 </html>
