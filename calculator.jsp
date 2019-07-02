@@ -35,6 +35,11 @@
 			else
 				out.println("The division cannot be performed");
 		}
+
+        // Redirect back to calculator UI
+        String redirectURL = "http://localhost/calculator.html?result=" + result;
+        response.sendRedirect(redirectURL);
+		Stashed changes
 %>
 </body>
 </html>
