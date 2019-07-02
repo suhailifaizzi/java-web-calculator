@@ -1,3 +1,5 @@
+<%@ page import="java.util.*" %>
+<%@ page import="java.io.*"%>
 <html>
 <title>calculator</title>
 <head><h1><center>Basic Calculator</center></h1></head>
@@ -5,14 +7,23 @@
 <center>
 <form action="calculator.jsp" method="get">
 
-<!-- Number fields. -->
 <%
-if
+    // Declare initial value as 0
+    double initialValue = 0;
+    
+    // If result passed from previous page, set initial value to result
+    if(request.getParameter("result") != null){
+        initialValue = Double.parseDouble(request.getParameter("result"));
+    }
 %>
-<label for="num1"><b>Number 1</b></label>
-<input type="text" name ="num1" required><br><br>
-<label for = "num2"><b>Number 2</b></label>
+
+<!-- Number fields. -->
+<input type="text" name ="num1" value="<%=initialValue%>" required><br>
 <input type="text" name="num2" required><br><br>
+
+<%
+
+%>
 
 <!-- Operation field. -->
 <input type ="radio" name = "r1" value="Add">+ 
