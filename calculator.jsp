@@ -8,7 +8,7 @@
 	int num1 = Integer.parseInt(request.getParameter("num1"));
 	int num2 = Integer.parseInt(request.getParameter("num2"));
 	
-    // Capture operation passed
+    // Capture operation passed by parameter
 	String operation = request.getParameter("r1");
 	
         // Addition operation
