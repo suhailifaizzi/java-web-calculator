@@ -1,38 +1,40 @@
-<html>
-<title>calculator</title>
-<head></head>
-<body>
-<%@page language="java"%>
+<%@ page import="java.util.*" %>
+<%@ page import="java.io.*"%>
 <%
     // Declare and initialize numbers
-	int num1;
-    if(Integer.parseInt(request.getParameter("num1"));
-	int num2 = Integer.parseInt(request.getParameter("num2"));
-    int value=0;
+	double insertedValue = 0;
+	double initialValue = Double.parseDouble(request.getParameter("initialValue"));
+	// If passed value have value, capture into passedValue
+    if(request.getParameter("insertedValue") != null){
+		insertedValue = Double.parseDouble(request.getParameter("insertedValue"));
+	}
+	double result;
 	
     // Capture operation passed by parameter
 	String operation = request.getParameter("r1");
 	
         // Addition operation
 		if(operation.equals("Add")){
-			value = num1+num2;
+			result = initialValue + insertedValue;
 		}
         // Subtract operation
 		else if(operation.equals("Sub")){
-			value = num1-num2;
+			result = initialValue-insertedValue;
 		}
         // Multiply operation
 		else if(operation.equals("mul")){
-			value = num1*num2;
+			result = initialValue*insertedValue;
 		}
         // Division operation
 		else if(operation.equals("div")){
-			value = num1/num2;
+			result = initialValue/insertedValue;
+		}
+		// In case where equals is clicked
+		else{
+			result = insertedValue;
 		}
 
         // Redirect back to calculator UI
-        String redirectURL = "http://localhost/calculator.html?value=" + value;
+        String redirectURL = "http://localhost:8080/java-web-calculator/app.jsp?result=" + result;
         response.sendRedirect(redirectURL);
 %>
-</body>
-</html>

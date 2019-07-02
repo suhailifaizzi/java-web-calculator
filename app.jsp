@@ -18,7 +18,7 @@
 <table>
     <tr>
         <!-- Number fields. -->
-        <td><input type="text" name ="num1" value="<%=initialValue%>" required><br></td>
+        <td><input type="text" name ="insertedValue" value="<%=initialValue%>" required><br></td>
     </tr>
     <tr>
         <!-- Operation field. -->
@@ -30,7 +30,8 @@
         <td><input type = "radio" name="r1" value="div">/<br><br></td>
     </tr>
     <tr>
-        <td><button value="submit" type="submit">=</button>
+        <input type="hidden" name="initialValue" value="<%=initialValue%>">
+        <button value="submit" name="r1" type="submit">=</button>
     </tr>
 
 
