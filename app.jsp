@@ -4,9 +4,6 @@
 <title>calculator</title>
 <head><h1><center>Basic Calculator</center></h1></head>
 <body>
-<center>
-<form action="calculator.jsp" method="get">
-
 <%
     // Declare initial value as 0
     double initialValue = 0;
@@ -16,20 +13,29 @@
         initialValue = Double.parseDouble(request.getParameter("result"));
     }
 %>
+<center>
+<form action="calculator.jsp" method="get">
+<table>
+    <tr>
+        <!-- Number fields. -->
+        <td><input type="text" name ="num1" value="<%=initialValue%>" required><br></td>
+    </tr>
+    <tr>
+        <!-- Operation field. -->
+        <td><input type ="radio" name = "r1" value="Add">+</td>
+        <td><input type = "radio" name = "r1" value="Sub">-</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="r1" value ="mul">* </td>
+        <td><input type = "radio" name="r1" value="div">/<br><br></td>
+    </tr>
+    <tr>
+        <td><button value="submit" type="submit">=</button>
+    </tr>
 
-<!-- Number fields. -->
-<input type="text" name ="num1" value="<%=initialValue%>" required><br>
-<input type="text" name="num2" required><br><br>
-
-<%
-
-%>
 
 <!-- Operation field. -->
-<input type ="radio" name = "r1" value="Add">+ 
-<input type = "radio" name = "r1" value="Sub">-<br>
-<input type="radio" name="r1" value ="mul">* 
-<input type = "radio" name="r1" value="div">/<br><br>
+
 
 <input type="submit" value="submit">
 </center>
