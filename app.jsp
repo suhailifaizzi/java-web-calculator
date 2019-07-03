@@ -54,12 +54,12 @@
         </tr>
         <tr>
             <!-- Operation field. -->
-            <td><button name="operation" type="submit" value="addition" style="width: 100%">+</button></td>
-            <td><button name="operation" type="submit" value="subtraction" style="width: 100%">-</button></td>
+            <td><button name="operation" type="submit" value="addition" style="width: 100%; font-weight: bold">+</button></td>
+            <td><button name="operation" type="submit" value="subtraction" style="width: 100%; font-weight: bold">-</button></td>
         </tr>
         <tr>
-            <td><button name="operation" type="submit" value="multiplication" style="width: 100%">&times</button></td>
-            <td><button name="operation" type="submit" value="division" style="width: 100%">&divide</button></td>
+            <td><button name="operation" type="submit" value="multiplication" style="width: 100%; font-weight: bold">&times</button></td>
+            <td><button name="operation" type="submit" value="division" style="width: 100%; font-weight: bold">&divide</button></td>
         </tr>
         <tr>
             <td colspan="2"><button value="submit" name="operation" type="submit" style="width: 100%">=</button></td>
