@@ -6,11 +6,13 @@
 <body>
 <%
     // Declare initial value as 0
-    double initialValue = 0;
+    double initialValue;
     
-    // If result passed from previous page, set initial value to result
+    // Set initial value to result
     if(request.getParameter("result") != null){
         initialValue = Double.parseDouble(request.getParameter("result"));
+    }else{
+        initialValue = 0;
     }
 %>
 <center>

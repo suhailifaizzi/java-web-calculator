@@ -15,28 +15,32 @@
     // Capture operation passed by parameter
 	String operation = request.getParameter("operation");
 	
-        // Addition operation
-		if(operation.equals("addition")){
-			result = initialValue + insertedValue;
-		}
-        // Subtract operation
-		else if(operation.equals("subtraction")){
-			result = initialValue-insertedValue;
-		}
-        // Multiply operation
-		else if(operation.equals("multiplication")){
-			result = initialValue*insertedValue;
-		}
-        // Division operation
-		else if(operation.equals("division")){
-			result = initialValue/insertedValue;
-		}
-		// In case where equals is clicked
-		else{
-			result = insertedValue;
-		}
+	// Initial value = 0, skip operation pass inserted value
+	if(initialValue==0){
+		result = insertedValue;
+	}
+	// Addition operation
+	else if(operation.equals("addition")){
+		result = initialValue + insertedValue;
+	}
+	// Subtract operation
+	else if(operation.equals("subtraction")){
+		result = initialValue-insertedValue;
+	}
+	// Multiply operation
+	else if(operation.equals("multiplication")){
+		result = initialValue*insertedValue;
+	}
+	// Division operation
+	else if(operation.equals("division")){
+		result = initialValue/insertedValue;
+	}
+	// In case where equals is clicked
+	else{
+		result = insertedValue;
+	}
 
-        // Redirect back to calculator UI
-        String redirectURL = "http://localhost:8080/java-web-calculator/app.jsp?result=" + result;
-        response.sendRedirect(redirectURL);
+	// Redirect back to calculator UI
+	String redirectURL = "http://localhost:8080/java-web-calculator/app.jsp?result=" + result;
+	response.sendRedirect(redirectURL);
 %>
