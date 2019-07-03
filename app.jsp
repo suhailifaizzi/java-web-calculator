@@ -1,3 +1,4 @@
+<%@ page language="java" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*"%>
 <html>
@@ -5,24 +6,33 @@
 <head><h1><center>Basic Calculator</center></h1></head>
 <body>
 <%
-    // Declare initial value as 0
+    // Declare initial value
     double initialValue;
+    boolean initialIsInfinity = new Boolean("false");
     
     // Set initial value to result
-    if(request.getParameter("result") != null){
+    if("Infinity".equals(request.getParameter("result"))){
+        initialValue = 0.0;
+        initialIsInfinity = true;
+    }else if(request.getParameter("result") != null && !request.getParameter("result").isEmpty()){
         initialValue = Double.parseDouble(request.getParameter("result"));
     }else{
-        initialValue = 0;
+        initialValue = 0.0;
     }
 %>
 <center>
+<%  if(initialIsInfinity == true){  %>
+        <h2>Not a number</h2>
+        <h2>Reseted</h2>
+<%  }   %>
+
 <form action="calculator.jsp" method="get">
 <table border="1">
     <col width=50%><col width=50%>
     <tbody>
         <tr>
             <!-- Number fields. -->
-            <td colspan="2"><input type="text" name="insertedValue" value="<%=initialValue%>" required></td>
+            <td colspan="2"><input type="number" step="any" name="insertedValue" value="<%=initialValue%>" required></td>
         </tr>
         <tr>
             <!-- Operation field. -->

@@ -1,3 +1,4 @@
+<%@ page language="java" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*"%>
 <%
@@ -8,7 +9,7 @@
     if(request.getParameter("insertedValue") != null){
 		insertedValue = Double.parseDouble(request.getParameter("insertedValue"));
 	}else{
-		insertedValue=0;
+		insertedValue=0.0;
 	}
 	double result;
 	
@@ -16,7 +17,7 @@
 	String operation = request.getParameter("operation");
 	
 	// Initial value = 0, skip operation pass inserted value
-	if(initialValue==0){
+	if(initialValue==0.0){
 		result = insertedValue;
 	}
 	// Addition operation
@@ -27,7 +28,7 @@
 	else if(operation.equals("subtraction")){
 		result = initialValue-insertedValue;
 	}
-	// Multiply operation
+	// Multiply operations
 	else if(operation.equals("multiplication")){
 		result = initialValue*insertedValue;
 	}
