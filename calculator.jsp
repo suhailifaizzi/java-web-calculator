@@ -5,13 +5,14 @@
     // Declare and initialize numbers
 	double insertedValue;
 	double initialValue = Double.parseDouble(request.getParameter("initialValue"));
+	double result;
+
 	// If passed value have value, capture into passedValue
     if(request.getParameter("insertedValue") != null){
 		insertedValue = Double.parseDouble(request.getParameter("insertedValue"));
 	}else{
 		insertedValue=0.0;
 	}
-	double result;
 	
     // Capture operation passed by parameter
 	String operation = request.getParameter("operation");

@@ -6,11 +6,25 @@
 <head><h1><center>Basic Calculator</center></h1></head>
 <body>
 <%
-    // Declare initial value
+    // Declare variables
     double initialValue;
     boolean initialIsInfinity = new Boolean("false");
     
-    // Set initial value to result
+    /**
+     * Condition to handle infinite value and null value
+     * Condition 1:
+     *  Check result of previous arithmetic is Infinity
+     *  Set initial value to zero
+     *  Set initial value is infinity flag to true
+     *
+     * Condition 2:
+     *  Check that result is not empty
+     *  Initialize the result to Initial value
+     *
+     * Condition 3:
+     *  To imitate landing at page where result has no value
+     *  Initialize result to zero.
+     */
     if("Infinity".equals(request.getParameter("result"))){
         initialValue = 0.0;
         initialIsInfinity = true;
@@ -21,9 +35,13 @@
     }
 %>
 <center>
-<%  if(initialIsInfinity == true){  %>
+<%  /**
+     * Check if initial value flag is true
+     * Notify that result is not a number and resetted.
+     */
+    if(initialIsInfinity == true){  %>
         <h2>Not a number</h2>
-        <h2>Reseted</h2>
+        <h2>Reset</h2>
 <%  }   %>
 
 <form action="calculator.jsp" method="get">
@@ -49,9 +67,7 @@
     </tbody>
 </table>
 
-
-<!-- Operation field. -->
-
+<!-- Pass initial value -->
 <input type="hidden" name="initialValue" value="<%=initialValue%>">
 </center>
 
