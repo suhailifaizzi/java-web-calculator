@@ -2,31 +2,33 @@
 <%@ page import="java.io.*"%>
 <%
     // Declare and initialize numbers
-	double insertedValue = 0;
+	double insertedValue;
 	double initialValue = Double.parseDouble(request.getParameter("initialValue"));
 	// If passed value have value, capture into passedValue
     if(request.getParameter("insertedValue") != null){
 		insertedValue = Double.parseDouble(request.getParameter("insertedValue"));
+	}else{
+		insertedValue=0;
 	}
 	double result;
 	
     // Capture operation passed by parameter
-	String operation = request.getParameter("r1");
+	String operation = request.getParameter("operation");
 	
         // Addition operation
-		if(operation.equals("Add")){
+		if(operation.equals("addition")){
 			result = initialValue + insertedValue;
 		}
         // Subtract operation
-		else if(operation.equals("Sub")){
+		else if(operation.equals("subtraction")){
 			result = initialValue-insertedValue;
 		}
         // Multiply operation
-		else if(operation.equals("mul")){
+		else if(operation.equals("multiplication")){
 			result = initialValue*insertedValue;
 		}
         // Division operation
-		else if(operation.equals("div")){
+		else if(operation.equals("division")){
 			result = initialValue/insertedValue;
 		}
 		// In case where equals is clicked

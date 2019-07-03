@@ -18,27 +18,26 @@
 <table>
     <tr>
         <!-- Number fields. -->
-        <td><input type="text" name ="insertedValue" value="<%=initialValue%>" required><br></td>
+        <td><input type="text" name="insertedValue" value="<%=initialValue%>" required><br></td>
     </tr>
     <tr>
         <!-- Operation field. -->
-        <td><input type ="radio" name = "r1" value="Add">+</td>
-        <td><input type = "radio" name = "r1" value="Sub">-</td>
+        <td><button name="operation" type="submit" value="addition">+</button></td>
+        <td><button name="operation" type="submit" value="subtraction">+</button></td>
     </tr>
     <tr>
-        <td><input type="radio" name="r1" value ="mul">* </td>
-        <td><input type = "radio" name="r1" value="div">/<br><br></td>
+        <td><button name="operation" type="submit" value="multiplication">x</button></td>
+        <td><button name="operation" type="submit" value="division">÷</button></td>
     </tr>
     <tr>
-        <input type="hidden" name="initialValue" value="<%=initialValue%>">
-        <button value="submit" name="r1" type="submit">=</button>
+        <td><button value="submit" name="operation" type="submit">=</button></td>
+        <td></td>
     </tr>
 
 
 <!-- Operation field. -->
 
-
-<input type="submit" value="submit">
+<input type="hidden" name="initialValue" value="<%=initialValue%>">
 </center>
 
 </body>
