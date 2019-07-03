@@ -17,24 +17,27 @@
 %>
 <center>
 <form action="calculator.jsp" method="get">
-<table>
-    <tr>
-        <!-- Number fields. -->
-        <td><input type="text" name="insertedValue" value="<%=initialValue%>" required><br></td>
-    </tr>
-    <tr>
-        <!-- Operation field. -->
-        <td><button name="operation" type="submit" value="addition">+</button></td>
-        <td><button name="operation" type="submit" value="subtraction">+</button></td>
-    </tr>
-    <tr>
-        <td><button name="operation" type="submit" value="multiplication">x</button></td>
-        <td><button name="operation" type="submit" value="division">÷</button></td>
-    </tr>
-    <tr>
-        <td><button value="submit" name="operation" type="submit">=</button></td>
-        <td></td>
-    </tr>
+<table border="1">
+    <col width=50%><col width=50%>
+    <tbody>
+        <tr>
+            <!-- Number fields. -->
+            <td colspan="2"><input type="text" name="insertedValue" value="<%=initialValue%>" required></td>
+        </tr>
+        <tr>
+            <!-- Operation field. -->
+            <td><button name="operation" type="submit" value="addition" style="width: 100%">+</button></td>
+            <td><button name="operation" type="submit" value="subtraction" style="width: 100%">-</button></td>
+        </tr>
+        <tr>
+            <td><button name="operation" type="submit" value="multiplication" style="width: 100%">&times</button></td>
+            <td><button name="operation" type="submit" value="division" style="width: 100%">&divide</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button value="submit" name="operation" type="submit" style="width: 100%">=</button></td>
+        </tr>
+    </tbody>
+</table>
 
 
 <!-- Operation field. -->
